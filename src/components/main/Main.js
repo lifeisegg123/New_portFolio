@@ -25,9 +25,15 @@ const Wrapper = styled.div`
   margin-right: auto;
   background-color: white;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Container = styled.div`
   margin: auto;
   width: 70%;
+  @media only screen and (max-width: 768px) {
+    width: 95%;
+  }
 `;

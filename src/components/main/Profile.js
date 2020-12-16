@@ -11,7 +11,7 @@ const Profile = () => {
       <Wrapper>
         <ProfileContainer>
           <SemiTitleContainer>
-            <h2>이 정 재</h2>
+            <h4>이 정 재</h4>
             Lee.Jung.Jae
           </SemiTitleContainer>
           <DescContainer>
@@ -33,7 +33,7 @@ const Profile = () => {
         </ProfileContainer>
         <ProfileContainer>
           <SemiTitleContainer>
-            <h3>Introduce</h3>
+            <h4>Introduce</h4>
           </SemiTitleContainer>
           <DescContainer>
             저는 학과 전공동아리에서 로봇 관련 프로그래밍을 하며 프로그래밍에
@@ -62,6 +62,7 @@ const Wrapper = styled.div`
 const ProfileContainer = styled.div`
   margin-top: 1rem;
   display: flex;
+  justify-content: flex-start;
 `;
 const InfoContainer = styled.span`
   display: flex;
@@ -76,8 +77,8 @@ const InfoContainer = styled.span`
   }
 `;
 const SemiTitleContainer = styled.span`
-  width: 15%;
+  width: 25%;
 `;
 const DescContainer = styled.span`
-  width: 85%;
+  width: 75%;
 `;
