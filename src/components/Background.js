@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import computerImg from "img/computer.png";
+import backImg from "img/computer.png";
 const Background = () => {
   return (
     <Wrapper>
       <Container>
-        <img src={computerImg} alt="" />
+        <img src={backImg} alt="" />
         <h1>Hi. I'm J.J.Lee</h1>
       </Container>
     </Wrapper>
@@ -20,7 +20,10 @@ const Wrapper = styled.div`
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #0f4c82;
+  background-color: #3678c2;
+  display: flex;
+  align-items: center;
+  color: white;
 `;
 
 const Container = styled.div`
@@ -30,4 +33,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  & img {
+    height: 500px;
+  }
 `;
