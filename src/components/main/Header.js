@@ -1,3 +1,4 @@
+import { FlexBox } from "components/styles/FlexBox";
 import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 
@@ -16,6 +17,11 @@ const Header = ({ contentsRef }) => {
   const handleHeaderHighlight = () => {
     const targetList = contentsRef.current.childNodes;
     if (
+      window.scrollY >
+      targetList[3].offsetTop + targetList[3].clientHeight / 2
+    ) {
+      setScrollPosition(3);
+    } else if (
       window.scrollY >
       targetList[2].offsetTop + targetList[2].clientHeight / 2
     ) {
@@ -47,16 +53,23 @@ const Header = ({ contentsRef }) => {
         Profile
       </StyledA>
       <StyledA
-        href="#skill"
+        href="#timeline"
         onClick={handleClick}
         activated={scrollPosition === 1}
+      >
+        Timeline
+      </StyledA>
+      <StyledA
+        href="#skill"
+        onClick={handleClick}
+        activated={scrollPosition === 2}
       >
         Skill
       </StyledA>
       <StyledA
         href="#portfolio"
         onClick={handleClick}
-        activated={scrollPosition === 2}
+        activated={scrollPosition === 3}
       >
         PortFolio
       </StyledA>
@@ -69,20 +82,19 @@ export default Header;
 const Wrapper = styled.header`
   position: sticky;
   top: 0;
+  z-index: 2;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 30px 0;
-  margin-bottom: 20px;
+  padding: 20px 0;
+  margin-bottom: 30px;
   background-color: white;
 `;
 const StyledA = styled.a`
+  ${FlexBox}
   width: 20%;
   padding: 5px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-decoration: none;
   color: #b3b3b3;
   font-size: 1.5rem;

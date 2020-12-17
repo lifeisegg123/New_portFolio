@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Title from "./Title";
 
 import cppImg from "img/C++.png";
@@ -15,6 +15,7 @@ import styledComponentImg from "img/styledComponent.png";
 import gitImg from "img/git.png";
 import firebaseImg from "img/firebase.png";
 import figmaImg from "img/figma.png";
+import { FlexBox } from "components/styles/FlexBox";
 
 const Skill = () => {
   const languages = [
@@ -81,19 +82,17 @@ const ContentsContainer = styled.span`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 15px;
   & h4 {
     margin-bottom: 10px;
   }
 `;
-const FlexBox = css`
-  width: 250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+
 const ItemContainer = styled.span`
   ${FlexBox}
+  width: 250px;
+  position: relative;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   & img {
@@ -108,6 +107,7 @@ const ItemContainer = styled.span`
   &:hover {
     &::before {
       ${FlexBox}
+      width:100%;
       position: absolute;
       height: 65px;
       content: "${(props) => props.level}";

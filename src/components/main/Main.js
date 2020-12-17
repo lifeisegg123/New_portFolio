@@ -4,6 +4,7 @@ import Header from "./Header";
 import PortFolio from "./PortFolio";
 import Profile from "./Profile";
 import Skill from "./Skill";
+import Timeline from "./Timeline";
 
 const Main = () => {
   const contentsRef = useRef();
@@ -13,6 +14,7 @@ const Main = () => {
         <Header contentsRef={contentsRef}></Header>
         <div ref={contentsRef}>
           <Profile></Profile>
+          <Timeline></Timeline>
           <Skill></Skill>
           <PortFolio></PortFolio>
         </div>
