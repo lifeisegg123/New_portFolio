@@ -41,4 +41,7 @@ const GridBox = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;

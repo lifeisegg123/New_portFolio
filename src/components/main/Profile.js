@@ -11,7 +11,7 @@ const Profile = () => {
       <Wrapper>
         <ProfileContainer>
           <SemiTitleContainer>
-            <h4>이 정 재</h4>
+            <h3>이 정 재</h3>
             Lee.Jung.Jae
           </SemiTitleContainer>
           <DescContainer>
@@ -33,7 +33,7 @@ const Profile = () => {
         </ProfileContainer>
         <ProfileContainer>
           <SemiTitleContainer>
-            <h4>Introduce</h4>
+            <h3>Introduce</h3>
           </SemiTitleContainer>
           <DescContainer>
             저는 학과 전공동아리에서 로봇 관련 프로그래밍을 하며 프로그래밍에
@@ -41,7 +41,7 @@ const Profile = () => {
             개발자로 취업을 준비하고 있습니다.
             <br />
             <br />
-            비전공자로써 전공지식이 부족한 부분이 있겠지만, 개인시간을 활용하여
+            비전공자로써 전공지식이 부족한 부분이 있지만, 개인시간을 활용하여
             지속적으로 공부하고 있고, 새로운 기술들에 대한 관심이 많습니다.
             <br />
             <br />
@@ -78,6 +78,9 @@ const InfoContainer = styled.span`
 `;
 const SemiTitleContainer = styled.span`
   width: 25%;
+  @media only screen and (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 const DescContainer = styled.span`
   width: 75%;

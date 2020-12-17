@@ -32,7 +32,7 @@ const Wrapper = styled.div`
   width: 80%;
   position: relative;
   z-index: 1;
-  margin: 100vh auto 100px auto;
+  margin: 100vh auto 80px auto;
   background-color: white;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
   @media only screen and (max-width: 768px) {

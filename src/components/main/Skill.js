@@ -76,16 +76,16 @@ export default Skill;
 const SkillContainer = styled.div`
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 `;
 
 const ContentsContainer = styled.span`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  flex-wrap: wrap;
   gap: 15px;
   & h4 {
-    margin-bottom: 10px;
+    margin: 10px 0;
   }
 `;
 
@@ -104,12 +104,25 @@ const ItemContainer = styled.span`
     width: 185px;
     text-align: center;
   }
+  @media only screen and (max-width: 768px) {
+    width: 140px;
+    & img {
+      width: 40px;
+      height: 40px;
+      margin: 5px 0;
+    }
+    & p {
+      width: 90px;
+      text-align: center;
+      font-size: 12px;
+    }
+  }
   &:hover {
     &::before {
       ${FlexBox}
       width:100%;
       position: absolute;
-      height: 65px;
+      height: 100%;
       content: "${(props) => props.level}";
       color: white;
       background-color: rgba(0, 0, 0, 0.7);

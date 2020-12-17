@@ -98,6 +98,8 @@ const StyledA = styled.a`
   text-decoration: none;
   color: #b3b3b3;
   font-size: 1.5rem;
-
+  @media only screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
   ${(props) => props.activated && "color: black"}
 `;

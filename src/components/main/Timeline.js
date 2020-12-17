@@ -45,10 +45,10 @@ export default Timeline;
 
 const circleAnimation = keyframes`
   0% {
-    transform: scale(0.7);
+    transform: scale(0.9);
   }
   100% {
-    transform: scale(1.2);
+    transform: scale(1.4);
   }
 `;
 const TimelineList = styled.ul`
