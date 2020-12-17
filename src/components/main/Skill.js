@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Title from "./Title";
 
 import cppImg from "img/C++.png";
@@ -13,33 +13,35 @@ import reduxImg from "img/redux.png";
 import styledComponentImg from "img/styledComponent.png";
 
 import gitImg from "img/git.png";
+import firebaseImg from "img/firebase.png";
 import figmaImg from "img/figma.png";
 
 const Skill = () => {
   const languages = [
-    [htmlImg, "HTML"],
-    [cssImg, "CSS"],
-    [jsImg, "JavaScript"],
-    [cppImg, "C++"],
-    [pythonImg, "Python"],
+    [htmlImg, "HTML", "Expert"],
+    [cssImg, "CSS", "Advanced"],
+    [jsImg, "JavaScript", "Expert"],
+    [cppImg, "C++", "Advanced"],
+    [pythonImg, "Python", "Advanced"],
   ];
   const libraries = [
-    [reactImg, "React"],
-    [reduxImg, "Redux"],
-    [styledComponentImg, "Styled-Component"],
+    [reactImg, "React", "Expert"],
+    [reduxImg, "Redux", "Advanced"],
+    [styledComponentImg, "Styled-Component", "Advanced"],
   ];
   const tools = [
-    [gitImg, "Git"],
-    [figmaImg, "Figma"],
+    [gitImg, "Git", "Advanced"],
+    [firebaseImg, "Firebase", "Beginner"],
+    [figmaImg, "Figma", "Beginner"],
   ];
   return (
-    <>
+    <div id="skill">
       <Title>Skill</Title>
       <SkillContainer>
         <ContentsContainer>
           <h4>Language</h4>
-          {languages.map(([img, name]) => (
-            <ItemContainer>
+          {languages.map(([img, name, level]) => (
+            <ItemContainer key={`${img} ${name}`} level={level}>
               <img src={img} alt={name} />
               <p>{name}</p>
             </ItemContainer>
@@ -47,8 +49,8 @@ const Skill = () => {
         </ContentsContainer>
         <ContentsContainer>
           <h4>Library</h4>
-          {libraries.map(([img, name]) => (
-            <ItemContainer>
+          {libraries.map(([img, name, level]) => (
+            <ItemContainer key={`${img} ${name}`} level={level}>
               <img src={img} alt={name} />
               <p>{name}</p>
             </ItemContainer>
@@ -56,15 +58,15 @@ const Skill = () => {
         </ContentsContainer>
         <ContentsContainer>
           <h4>Tool</h4>
-          {tools.map(([img, name]) => (
-            <ItemContainer>
+          {tools.map(([img, name, level]) => (
+            <ItemContainer key={`${img} ${name}`} level={level}>
               <img src={img} alt={name} />
               <p>{name}</p>
             </ItemContainer>
           ))}
         </ContentsContainer>
       </SkillContainer>
-    </>
+    </div>
   );
 };
 
@@ -79,18 +81,39 @@ const ContentsContainer = styled.span`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 15px;
   & h4 {
     margin-bottom: 10px;
   }
 `;
-const ItemContainer = styled.span`
+const FlexBox = css`
+  width: 250px;
   display: flex;
   align-items: center;
+  justify-content: center;
+`;
+const ItemContainer = styled.span`
+  ${FlexBox}
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
   & img {
-    width: 45px;
-    height: 45px;
-    margin: 5px 15px 5px 0;
-    border-radius: 5px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    width: 55px;
+    height: 55px;
+    margin: 5px 0;
+  }
+  & p {
+    width: 185px;
+    text-align: center;
+  }
+  &:hover {
+    &::before {
+      ${FlexBox}
+      position: absolute;
+      height: 65px;
+      content: "${(props) => props.level}";
+      color: white;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 5px;
+    }
   }
 `;

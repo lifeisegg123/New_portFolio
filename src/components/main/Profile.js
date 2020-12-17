@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 const Profile = () => {
   return (
-    <>
+    <div id="profile">
       <Title>Profile</Title>
       <Wrapper>
         <ProfileContainer>
@@ -50,7 +50,7 @@ const Profile = () => {
           </DescContainer>
         </ProfileContainer>
       </Wrapper>
-    </>
+    </div>
   );
 };
 
