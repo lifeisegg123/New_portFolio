@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Title from "./Title";
 
 const Timeline = () => {
@@ -43,6 +43,14 @@ const Timeline = () => {
 
 export default Timeline;
 
+const circleAnimation = keyframes`
+  0% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+`;
 const TimelineList = styled.ul`
   display: flex;
   flex-direction: column;
@@ -70,6 +78,7 @@ const ListItem = styled.li`
     position: absolute;
     border: solid 3px #3678c2;
     border-radius: 50%;
+    animation: ${circleAnimation} 0.8s infinite linear alternate;
   }
   & p {
     margin-top: 20px;
