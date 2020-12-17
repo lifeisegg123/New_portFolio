@@ -25,19 +25,20 @@ const Modal = ({
           <h2>{title}</h2>
         </TitleBox>
         <ContentsBox>
-          <ImgGrid>
-            {imgs &&
-              imgs.map((img, index) => (
+          {imgs && (
+            <ImgGrid>
+              {imgs.map((img, index) => (
                 <img src={img} key={`&{img}_${index}`} alt={index} />
               ))}
-          </ImgGrid>
+            </ImgGrid>
+          )}
           <DescBox>
             <h4>Description</h4>
             <p>{desc}</p>
             <h4>Skill</h4>
             <ul>
               {skill.split(".").map((value) => (
-                <li>
+                <li key={value}>
                   <p>{value}</p>
                 </li>
               ))}
@@ -97,6 +98,7 @@ const TitleBox = styled.div`
   justify-content: center;
   border-radius: 5px;
   gap: 10px;
+  color: white;
   background-color: ${(props) => props.backgroundColor};
   & img {
     width: 50px;
@@ -152,10 +154,15 @@ const DescBox = styled(FloatingBox)`
 `;
 const CloseButton = styled.button`
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 15px;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
   font-size: 20px;
   border: none;
+  width: auto;
   background-color: white;
   &:hover {
     cursor: pointer;
