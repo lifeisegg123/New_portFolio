@@ -16,10 +16,10 @@ export default ProjectBox;
 const ProjectContainer = styled.div`
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
   &:hover {
     transform: translateY(-8%);
     transition: 0.5s;
-    cursor: pointer;
   }
 `;
 const ImgBox = styled.div`
