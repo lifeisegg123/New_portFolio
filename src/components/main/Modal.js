@@ -82,13 +82,16 @@ const Wrapper = styled.div`
   transform: translate(-50%, -50%);
   width: 80vw;
   height: 90vh;
-  min-height: 490px;
+  min-height: 550px;
   padding: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   background-color: white;
+  @media only screen and (max-width: 768px) {
+    width: 100vw;
+  }
 `;
 const TitleBox = styled.div`
   width: 80%;
@@ -119,10 +122,6 @@ const Link = styled.a`
     font-size: 30px;
   }
 `;
-const ContentsBox = styled.div`
-  display: flex;
-  justify-content: space-around;
-`;
 const FloatingBox = styled.span`
   padding: 10px;
   border-radius: 10px;
@@ -142,6 +141,15 @@ const ImgGrid = styled(FloatingBox)`
       transform: scale(2.7);
     }
   }
+  @media only screen and (max-width: 768px) {
+    & img {
+      width: 100%;
+      height: 35vw;
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+  }
 `;
 const DescBox = styled(FloatingBox)`
   width: 50%;
@@ -150,6 +158,23 @@ const DescBox = styled(FloatingBox)`
   }
   & ul {
     margin: 0;
+  }
+  @media only screen and (max-width: 768px) {
+    & p {
+      font-size: 11px;
+    }
+  }
+`;
+const ContentsBox = styled.div`
+  display: flex;
+  justify-content: space-around;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    & ${FloatingBox} {
+      width: 90%;
+      margin: 5px 0;
+    }
   }
 `;
 const CloseButton = styled.button`

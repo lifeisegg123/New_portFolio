@@ -9,7 +9,7 @@ const PortFolio = () => {
   const [modal, setModal] = useState(null);
   const handleModal = (event) => {
     const [target] = portFolioData.filter(
-      ({ title }) => event.currentTarget.innerText === title
+      ({ title }) => event.currentTarget.textContent === title
     );
     setModal(target);
   };
