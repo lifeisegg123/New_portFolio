@@ -83,7 +83,6 @@ const ContentsContainer = styled.span`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 15px;
   & h4 {
     margin: 10px 0;
   }
@@ -91,6 +90,7 @@ const ContentsContainer = styled.span`
 
 const ItemContainer = styled.span`
   ${FlexBox}
+  margin: 7px 0;
   width: 250px;
   position: relative;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
