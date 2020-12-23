@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import Title from "./Title";
 
@@ -13,8 +13,8 @@ const Timeline = () => {
     timelineObj("2020.09", "트위터 클론"),
     timelineObj("2020.10~", "뮤지컬 리뷰페이지 프로젝트"),
   ];
-
-  const [descIndex, setDescIndex] = useState(null);
+  const [clicked, setClicked] = useState(false);
+  const [descIndex, setDescIndex] = useState(0);
   const listRef = useRef();
   const handleClickEvent = (event) => {
     const target = timelines.findIndex(
@@ -25,7 +25,19 @@ const Timeline = () => {
     } else {
       setDescIndex(null);
     }
+    setClicked(true);
   };
+  useEffect(() => {
+    const indexChanger = setInterval(() => {
+      descIndex === timelines.length - 1
+        ? setDescIndex(0)
+        : setDescIndex(descIndex + 1);
+    }, 2000);
+    if (clicked) {
+      clearInterval(indexChanger);
+    }
+    return () => clearInterval(indexChanger);
+  }, [descIndex, clicked, timelines.length]);
   return (
     <div id="timeline">
       <Title>Timeline</Title>

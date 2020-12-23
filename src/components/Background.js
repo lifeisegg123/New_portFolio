@@ -34,6 +34,10 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-around;
   & img {
-    height: 500px;
+    height: 40vw;
+    width: 40vw;
+  }
+  & h1 {
+    white-space: nowrap;
   }
 `;
