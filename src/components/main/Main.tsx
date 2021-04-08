@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, FC } from "react";
 import styled from "styled-components";
 import Header from "./Header";
 import PortFolio from "./PortFolio";
@@ -6,8 +6,8 @@ import Profile from "./Profile";
 import Skill from "./Skill";
 import Timeline from "./Timeline";
 
-const Main = () => {
-  const contentsRef = useRef();
+const Main: FC = () => {
+  const contentsRef = useRef<HTMLDivElement>(null);
   return (
     <Wrapper>
       <Container>

@@ -3,6 +3,7 @@ import twitterImg from "img/twitter.png";
 import musicalImg from "img/musical.png";
 import deltaImg from "img/deltalogo.png";
 import shipImg from "img/shiplogo.png";
+import alcoholImg from "img/alcohol.png";
 
 import instaclone1 from "img/instaclone1.png";
 import instaclone2 from "img/instaclone2.png";
@@ -17,16 +18,31 @@ import delta2 from "img/delta2.jpg";
 
 import ship1 from "img/autonomous_ship1.png";
 
+import alcohol1 from "img/alcohol1.png";
+import alcohol2 from "img/alcohol2.png";
+import alcohol3 from "img/alcohol3.png";
+
+export interface ProjectInfo {
+  logo: string;
+  github: string;
+  title: string;
+  desc: string;
+  skill: string;
+  backgroundColor: string;
+  imgs?: string[];
+  link?: string;
+}
+
 const projectObj = (
-  logo,
-  github,
-  title,
-  desc,
-  skill,
-  backgroundColor,
-  imgs,
-  link
-) => ({
+  logo: string,
+  github: string,
+  title: string,
+  desc: string,
+  skill: string,
+  backgroundColor: string,
+  imgs?: string[],
+  link?: string
+): ProjectInfo => ({
   logo,
   github,
   title,
@@ -38,13 +54,22 @@ const projectObj = (
 });
 const portFolioData = [
   projectObj(
-    instaImg,
-    "https://github.com/lifeisegg123/insta-clone",
-    "Insta Clone",
-    "백엔드가 없는 정적페이지로 가상의 데이터를 제작해 놓고, 각 페이지 디자인 및 간단한 기능 구현.",
-    "React를 이용한 페이지 제작.Redux를 이용한 상태관리.Material-UI를 이용한 Css작업",
-    "#b34c9f",
-    [instaclone1, instaclone2, instaclone3]
+    alcoholImg,
+    "https://github.com/lifeisegg123/alcoholic_client",
+    "주당 이선생",
+    "술을 좋아하는 사람들을 위한 사이트(개발자 포함). 다양한 종류의 술을 검색하고, 리뷰 및 별점을 남기며 자신의 의견을 공유하는데 목적을 둠.",
+    "Next, react-query, emotion, antd => 클라이언트 제작 (SSR 적용).Nestjs, Mysql, TypeOrm => 백엔드 제작.Docker, Kubernetes, GCP => CI & CD",
+    "black",
+    [alcohol1, alcohol2, alcohol3],
+    "https://drinklikeafish.xyz"
+  ),
+  projectObj(
+    musicalImg,
+    "https://github.com/lifeisegg123/musical_review",
+    "Musical Review",
+    "페이지 디자인 및 백엔드 개발자와 협업하여, 뮤지컬 리뷰 및 관련정보 조회 및 검색 기능 구현, 관리자용 페이지 개발.",
+    "React를 이용한 페이지 제작.Redux, Redux-saga를 활용한 상태관리 및 비동기처리.Styled-Component를 이용한 Css작업",
+    "#383FE8"
   ),
   projectObj(
     twitterImg,
@@ -57,12 +82,13 @@ const portFolioData = [
     "https://lifeisegg123.github.io/cwitter"
   ),
   projectObj(
-    musicalImg,
-    "https://github.com/lifeisegg123/musical_review",
-    "Musical Review",
-    "페이지 디자인 및 백엔드 개발자와 협업하여, 뮤지컬 리뷰 및 관련정보 조회 및 검색 기능 구현, 관리자용 페이지 개발.",
-    "React를 이용한 페이지 제작.Redux, Redux-saga를 활용한 상태관리 및 비동기처리.Styled-Component를 이용한 Css작업",
-    "#383FE8"
+    instaImg,
+    "https://github.com/lifeisegg123/insta-clone",
+    "Insta Clone",
+    "백엔드가 없는 정적페이지로 가상의 데이터를 제작해 놓고, 각 페이지 디자인 및 간단한 기능 구현.",
+    "React를 이용한 페이지 제작.Redux를 이용한 상태관리.Material-UI를 이용한 Css작업",
+    "#b34c9f",
+    [instaclone1, instaclone2, instaclone3]
   ),
   projectObj(
     deltaImg,

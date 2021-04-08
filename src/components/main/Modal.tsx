@@ -1,8 +1,20 @@
-import React from "react";
+import React, { FC } from "react";
 import { AiFillCloseCircle, AiFillGithub, AiOutlineLink } from "react-icons/ai";
 import styled from "styled-components";
 
-const Modal = ({
+interface ModalProps {
+  logo: string;
+  github: string;
+  title: string;
+  desc: string;
+  skill: string;
+  backgroundColor: string;
+  imgs?: string[];
+  link?: string;
+  closeModal(event: Event): void;
+}
+
+const Modal: FC<ModalProps> = ({
   logo,
   github,
   title,
@@ -15,9 +27,9 @@ const Modal = ({
 }) => {
   return (
     <>
-      <Background onClick={closeModal}></Background>
+      <Background onClick={closeModal as () => {}}></Background>
       <Wrapper>
-        <CloseButton onClick={closeModal}>
+        <CloseButton onClick={closeModal as () => {}}>
           <AiFillCloseCircle />
         </CloseButton>
         <TitleBox backgroundColor={backgroundColor}>
@@ -28,7 +40,11 @@ const Modal = ({
           {imgs && (
             <ImgGrid>
               {imgs.map((img, index) => (
-                <img src={img} key={`&{img}_${index}`} alt={index} />
+                <img
+                  src={img}
+                  key={`${img}_${index}`}
+                  alt={`${img}_${index}`}
+                />
               ))}
             </ImgGrid>
           )}
@@ -93,7 +109,7 @@ const Wrapper = styled.div`
     width: 100vw;
   }
 `;
-const TitleBox = styled.div`
+const TitleBox = styled.div<{ backgroundColor: string }>`
   width: 80%;
   height: 70px;
   display: flex;

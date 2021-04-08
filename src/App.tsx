@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 import Background from "components/Background";
 import Main from "components/main/Main";
-const App = () => {
+const App: FC = () => {
   return (
     <>
       <Background></Background>

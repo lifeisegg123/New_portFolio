@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import Title from "./Title";
 
@@ -7,31 +7,50 @@ import pythonImg from "img/python.png";
 import jsImg from "img/JS.png";
 import cssImg from "img/CSS.png";
 import htmlImg from "img/HTML.png";
+import typescriptImg from "img/typescript.png";
 
 import reactImg from "img/react.png";
 import reduxImg from "img/redux.png";
 import styledComponentImg from "img/styledComponent.png";
+import nextImg from "img/next.png";
+import nestImg from "img/nest.png";
+import expressImg from "img/express.png";
+import emotionImg from "img/emotion.png";
 
 import gitImg from "img/git.png";
 import firebaseImg from "img/firebase.png";
 import figmaImg from "img/figma.png";
+import mongoImg from "img/mongo.png";
+import mysqlImg from "img/mysql.png";
+import dockerImg from "img/docker.png";
+import kubernetesImg from "img/kubernetes.png";
+
 import { FlexBox } from "components/styles/FlexBox";
 
-const Skill = () => {
+const Skill: FC = () => {
   const languages = [
+    [jsImg, "JavaScript", "Expert"],
     [htmlImg, "HTML", "Expert"],
     [cssImg, "CSS", "Advanced"],
-    [jsImg, "JavaScript", "Expert"],
     [cppImg, "C++", "Advanced"],
     [pythonImg, "Python", "Advanced"],
+    [typescriptImg, "TypeScript", "Advanced"],
   ];
   const libraries = [
     [reactImg, "React", "Expert"],
-    [reduxImg, "Redux", "Advanced"],
-    [styledComponentImg, "Styled-Component", "Advanced"],
+    [nextImg, "Next.js", "Expert"],
+    [reduxImg, "Redux", "Expert"],
+    [styledComponentImg, "Styled-Component", "Expert"],
+    [emotionImg, "Emotion.js", "Advanced"],
+    [expressImg, "Next.js", "Expert"],
+    [nestImg, "Nest.js", "Beginner"],
   ];
   const tools = [
     [gitImg, "Git", "Advanced"],
+    [mongoImg, "Mongo DB", "Advanced"],
+    [dockerImg, "Docker", "Advanced"],
+    [kubernetesImg, "Kubernetes", "Beginner"],
+    [mysqlImg, "MySql", "Beginner"],
     [firebaseImg, "Firebase", "Beginner"],
     [figmaImg, "Figma", "Beginner"],
   ];
@@ -88,7 +107,7 @@ const ContentsContainer = styled.span`
   }
 `;
 
-const ItemContainer = styled.span`
+const ItemContainer = styled.span<{ level: string }>`
   ${FlexBox}
   margin: 7px 0;
   width: 250px;

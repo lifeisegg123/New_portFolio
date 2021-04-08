@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import backImg from "img/computer.png";
+
 const Background = () => {
   return (
     <Wrapper>

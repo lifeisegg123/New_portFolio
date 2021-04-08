@@ -2,21 +2,22 @@ import React, { useEffect, useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import Title from "./Title";
 
+const timelineObj = (date: string, desc: string) => ({ date, desc });
+const timelines = [
+  timelineObj("2019.03", "인하공업전문대학 입학"),
+  timelineObj("2019.12", "프로그래밍 시작(파이썬)"),
+  timelineObj("2020.04~07", "델타로봇 프로젝트"),
+  timelineObj("2020.07", "웹개발 시작(HTML,CSS,JS), 정보처리 산업기사 취득"),
+  timelineObj("2020.08", "자율 운항 선박 프로젝트, 인스타 클론"),
+  timelineObj("2020.09", "트위터 클론"),
+  timelineObj("2020.10~", "뮤지컬 리뷰페이지 프로젝트"),
+];
+
 const Timeline = () => {
-  const timelineObj = (date, desc) => ({ date, desc });
-  const timelines = [
-    timelineObj("2019.03", "인하공업전문대학 입학"),
-    timelineObj("2019.12", "프로그래밍 시작(파이썬)"),
-    timelineObj("2020.04~07", "델타로봇 프로젝트"),
-    timelineObj("2020.07", "웹개발 시작(HTML,CSS,JS), 정보처리 산업기사 취득"),
-    timelineObj("2020.08", "자율 운항 선박 프로젝트, 인스타 클론"),
-    timelineObj("2020.09", "트위터 클론"),
-    timelineObj("2020.10~", "뮤지컬 리뷰페이지 프로젝트"),
-  ];
   const [clicked, setClicked] = useState(false);
-  const [descIndex, setDescIndex] = useState(0);
-  const listRef = useRef();
-  const handleClickEvent = (event) => {
+  const [descIndex, setDescIndex] = useState<number | null>(0);
+  const listRef = useRef(null);
+  const handleClickEvent = (event: any) => {
     const target = timelines.findIndex(
       ({ date }) => date === event.currentTarget.lastChild.innerText
     );
@@ -31,13 +32,13 @@ const Timeline = () => {
     const indexChanger = setInterval(() => {
       descIndex === timelines.length - 1
         ? setDescIndex(0)
-        : setDescIndex(descIndex + 1);
+        : setDescIndex(descIndex ?? +1);
     }, 2000);
     if (clicked) {
       clearInterval(indexChanger);
     }
     return () => clearInterval(indexChanger);
-  }, [descIndex, clicked, timelines.length]);
+  }, [descIndex, clicked]);
   return (
     <div id="timeline">
       <Title>Timeline</Title>

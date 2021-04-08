@@ -1,9 +1,21 @@
-import React from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 
-const ProjectBox = ({ backgroundColor, img, title, onClick }) => {
+interface ProjectBoxProps {
+  backgroundColor: string;
+  img: string;
+  title: string;
+  onClick(event: Event): void;
+}
+
+const ProjectBox: FC<ProjectBoxProps> = ({
+  backgroundColor,
+  img,
+  title,
+  onClick,
+}) => {
   return (
-    <ProjectContainer onClick={onClick}>
+    <ProjectContainer onClick={onClick as () =>{}}>
       <ImgBox backgroundColor={backgroundColor}>
         <img src={img} alt={title} />
       </ImgBox>
@@ -24,7 +36,7 @@ const ProjectContainer = styled.div`
     }
   }
 `;
-const ImgBox = styled.div`
+const ImgBox = styled.div<{ backgroundColor: string }>`
   width: 100%;
   height: 150px;
   display: flex;

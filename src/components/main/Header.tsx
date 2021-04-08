@@ -1,10 +1,14 @@
 import { FlexBox } from "components/styles/FlexBox";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, FC } from "react";
 import styled from "styled-components";
 
-const Header = ({ contentsRef }) => {
-  const headerRef = useRef();
-  const handleClick = (event) => {
+interface HeaderProps {
+  contentsRef: any;
+}
+
+const Header: FC<HeaderProps> = ({ contentsRef }) => {
+  const headerRef = useRef<any>();
+  const handleClick = (event: any) => {
     event.preventDefault();
     const target = document.querySelector(event.target.hash);
     const targetPosition =
@@ -16,7 +20,7 @@ const Header = ({ contentsRef }) => {
     }
   };
 
-  const [scrollPosition, setScrollPosition] = useState(null);
+  const [scrollPosition, setScrollPosition] = useState<number | null>(null);
   const handleHeaderHighlight = () => {
     const targetList = contentsRef.current.childNodes;
     if (
@@ -94,7 +98,7 @@ const Wrapper = styled.header`
   margin-bottom: 30px;
   background-color: white;
 `;
-const StyledA = styled.a`
+const StyledA = styled.a<{ activated: boolean }>`
   ${FlexBox}
   width: 20%;
   padding: 5px 0;

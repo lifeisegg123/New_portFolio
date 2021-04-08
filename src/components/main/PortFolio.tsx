@@ -4,12 +4,12 @@ import styled from "styled-components";
 import ProjectBox from "./ProjectBox";
 import Title from "./Title";
 import Modal from "./Modal";
-import portFolioData from "portfolioData";
+import portFolioData, { ProjectInfo } from "portfolioData";
 const PortFolio = () => {
-  const [modal, setModal] = useState(null);
-  const handleModal = (event) => {
+  const [modal, setModal] = useState<ProjectInfo | null>(null);
+  const handleModal = (event: any) => {
     const [target] = portFolioData.filter(
-      ({ title }) => event.currentTarget.textContent === title
+      ({ title }) => event?.currentTarget?.textContent === title
     );
     setModal(target);
   };
@@ -27,7 +27,7 @@ const PortFolio = () => {
               img={logo}
               title={title}
               backgroundColor={backgroundColor}
-            ></ProjectBox>
+            />
           ))}
         </GridBox>
       </div>

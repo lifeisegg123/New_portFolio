@@ -1,10 +1,10 @@
-import React from "react";
+import React, { FC } from "react";
 import Title from "./Title";
 
 import { AiFillGithub, AiFillMail, AiFillPhone } from "react-icons/ai";
 import styled from "styled-components";
 
-const Profile = () => {
+const Profile: FC = () => {
   return (
     <div id="profile">
       <Title>Profile</Title>
@@ -36,17 +36,17 @@ const Profile = () => {
             <h3>Introduce</h3>
           </SemiTitleContainer>
           <DescContainer>
-            저는 학과 전공동아리에서 로봇 관련 프로그래밍을 하며 프로그래밍에
-            관심이 생겼고, 취미로 시작한 웹개발이 적성에 맞아 프론트엔드
-            개발자로 취업을 준비하고 있습니다.
+            학과 전공동아리에서 로봇 관련 프로그래밍을 하며 프로그래밍에 관심을
+            가졌고, 취미로 시작한 웹개발이 적성에 맞아 웹 개발자로 일하고
+            있습니다.
             <br />
             <br />
-            비전공자로써 전공지식이 부족한 부분이 있지만, 개인시간을 활용하여
-            지속적으로 공부하고 있고, 새로운 기술들에 대한 관심이 많습니다.
+            퇴근 후 항상 새로운 것들을 공부하고, 사이드 프로젝트를 하며 적용 해
+            보는 것을 즐깁니다.
             <br />
             <br />
-            미약하지만 협업에 대한 경험도 있고, 현재까지 Python, C++,
-            JavaScript를 다루어 보았습니다.
+            재사용 가능한 코드를 작성하는데 관심이 많고, 항상 고민하며 코드를
+            작성하고 있습니다.
           </DescContainer>
         </ProfileContainer>
       </Wrapper>
