@@ -10,7 +10,9 @@ const timelines = [
   timelineObj("2020.07", "웹개발 시작(HTML,CSS,JS), 정보처리 산업기사 취득"),
   timelineObj("2020.08", "자율 운항 선박 프로젝트, 인스타 클론"),
   timelineObj("2020.09", "트위터 클론"),
-  timelineObj("2020.10~", "뮤지컬 리뷰페이지 프로젝트"),
+  timelineObj("2020.10~12", "뮤지컬 리뷰페이지 프로젝트"),
+  timelineObj("2020.12~", "감성한스푼 재직중"),
+  timelineObj("2020.12~2021.3", "주당 이선생 프로젝트"),
 ];
 
 const Timeline = () => {

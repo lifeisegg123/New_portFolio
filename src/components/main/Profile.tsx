@@ -12,7 +12,8 @@ const Profile: FC = () => {
         <ProfileContainer>
           <SemiTitleContainer>
             <h3>이 정 재</h3>
-            Lee.Jung.Jae
+            <p>Lee.Jung.Jae</p>
+            <SmallText>감성한스푼 2020.12~</SmallText>
           </SemiTitleContainer>
           <DescContainer>
             <InfoContainer>
@@ -84,4 +85,9 @@ const SemiTitleContainer = styled.span`
 `;
 const DescContainer = styled.span`
   width: 75%;
+`;
+const SmallText = styled.p`
+  margin-top: 0.2rem;
+  font-size: 0.5rem;
+  color: #555555;
 `;
