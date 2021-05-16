@@ -23,6 +23,9 @@ import alcohol1 from "img/alcohol1.png";
 import alcohol2 from "img/alcohol2.png";
 import alcohol3 from "img/alcohol3.png";
 
+import marketUniverse1 from "img/marketUniverse1.png";
+import marketUniverse2 from "img/marketUniverse2.png";
+
 export interface ProjectInfo {
   logo: string;
   github: string;
@@ -61,8 +64,7 @@ const portFolioData = [
     "벼룩 시장, 프리 마켓 상인들이 온라인 상 물품 판매를 할 수 있는 쇼핑몰. 2명의 백엔드 개발자, 2명의 프론트엔드 개발자, 1명의 디자이너로 구성된 팀형태로 작업.",
     "Next.js, react-query, emotion.js, typescript를 이용한 프론트엔드 개발",
     "white",
-    [alcohol1, alcohol2, alcohol3],
-    "https://drinklikeafish.xyz"
+    [marketUniverse1, marketUniverse2]
   ),
   projectObj(
     alcoholImg,
