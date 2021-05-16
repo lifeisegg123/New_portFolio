@@ -1,11 +1,11 @@
-import React, { FC } from "react";
+import React, { FC, MouseEventHandler } from "react";
 import styled from "styled-components";
 
 interface ProjectBoxProps {
   backgroundColor: string;
   img: string;
   title: string;
-  onClick(event: Event): void;
+  onClick: MouseEventHandler<HTMLDivElement>;
 }
 
 const ProjectBox: FC<ProjectBoxProps> = ({
@@ -15,7 +15,7 @@ const ProjectBox: FC<ProjectBoxProps> = ({
   onClick,
 }) => {
   return (
-    <ProjectContainer onClick={onClick as () =>{}}>
+    <ProjectContainer onClick={onClick}>
       <ImgBox backgroundColor={backgroundColor}>
         <img src={img} alt={title} />
       </ImgBox>

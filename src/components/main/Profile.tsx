@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import Title from "./Title";
+import imojiImg from "img/imoji.png";
 
 import { AiFillGithub, AiFillMail, AiFillPhone } from "react-icons/ai";
 import styled from "styled-components";
@@ -16,20 +17,25 @@ const Profile: FC = () => {
             <SmallText>감성한스푼 2020.12~</SmallText>
           </SemiTitleContainer>
           <DescContainer>
-            <InfoContainer>
-              <AiFillMail />
-              <p>leejj2002@naver.com</p>
-            </InfoContainer>
-            <InfoContainer>
-              <AiFillPhone />
-              <p>010-5499-9316</p>
-            </InfoContainer>
-            <InfoContainer>
-              <AiFillGithub />
-              <a href="https://github.com/lifeisegg123">
-                github.com/lifeisegg123
-              </a>
-            </InfoContainer>
+            <span>
+              <ProfileImg src={imojiImg} alt="" />
+            </span>
+            <span>
+              <InfoContainer>
+                <AiFillMail />
+                <p>leejj2002@naver.com</p>
+              </InfoContainer>
+              <InfoContainer>
+                <AiFillPhone />
+                <p>010-5499-9316</p>
+              </InfoContainer>
+              <InfoContainer>
+                <AiFillGithub />
+                <a href="https://github.com/lifeisegg123">
+                  github.com/lifeisegg123
+                </a>
+              </InfoContainer>
+            </span>
           </DescContainer>
         </ProfileContainer>
         <ProfileContainer>
@@ -84,10 +90,20 @@ const SemiTitleContainer = styled.span`
   }
 `;
 const DescContainer = styled.span`
+  display: flex;
+  align-items: center;
   width: 75%;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 const SmallText = styled.p`
   margin-top: 0.2rem;
   font-size: 0.5rem;
   color: #555555;
+`;
+
+const ProfileImg = styled.img`
+  width: 5rem;
 `;

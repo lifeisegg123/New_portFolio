@@ -53,7 +53,7 @@ const Modal: FC<ModalProps> = ({
             <p>{desc}</p>
             <h4>Skill</h4>
             <ul>
-              {skill.split(".").map((value) => (
+              {skill.split("..").map((value) => (
                 <li key={value}>
                   <p>{value}</p>
                 </li>
@@ -117,7 +117,8 @@ const TitleBox = styled.div<{ backgroundColor: string }>`
   justify-content: center;
   border-radius: 5px;
   gap: 10px;
-  color: white;
+  color: ${({ backgroundColor }) =>
+    backgroundColor === "white" ? "black" : "white"};
   background-color: ${(props) => props.backgroundColor};
   & img {
     width: 50px;
@@ -162,7 +163,7 @@ const ImgGrid = styled(FloatingBox)`
       width: 100%;
       height: 35vw;
       &:hover {
-        transform: scale(1.5);
+        transform: scale(1.3);
       }
     }
   }

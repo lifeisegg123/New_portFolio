@@ -42,7 +42,7 @@ const Skill: FC = () => {
     [reduxImg, "Redux", "Expert"],
     [styledComponentImg, "Styled-Component", "Expert"],
     [emotionImg, "Emotion.js", "Advanced"],
-    [expressImg, "Next.js", "Expert"],
+    [expressImg, "express.js", "Expert"],
     [nestImg, "Nest.js", "Beginner"],
   ];
   const tools = [

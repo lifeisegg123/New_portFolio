@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { MouseEvent, useState } from "react";
 import styled from "styled-components";
 
 import ProjectBox from "./ProjectBox";
 import Title from "./Title";
 import Modal from "./Modal";
 import portFolioData, { ProjectInfo } from "portfolioData";
+
 const PortFolio = () => {
   const [modal, setModal] = useState<ProjectInfo | null>(null);
-  const handleModal = (event: any) => {
+  const handleModal = (event: MouseEvent) => {
     const [target] = portFolioData.filter(
       ({ title }) => event?.currentTarget?.textContent === title
     );
